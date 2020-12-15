@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div >
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Bank Customer Churn Predictor</h2>
+            <h3>Enter Customer ID</h3>
+            <input id="Customerid" name="custid" type="text" value="00000000">
+                    
+            <h3>Gender?</h3><br><select name="Gender" id="Gender" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                </select>
+
+            <h3>Age</h3><input id="Age" name="Age" required="required" value="e.g 18-100">
+            
+             <h3>Geography?</h3><br><select name="Geography" id="Geography" required="required">
+                <option value="Germany">Germany</option>
+                <option value="Spain">Spain</option>
+                <option value="France">France</option>
+                </select>  
+             <h3>Estimated Salary?</h3><br><input id="EstimatedSalary" name="EstimatedSalary" required="required" value="eg. 50000" >
+             
+             <h3>Balance?</h3><br><input id="Balance" name="Balance" required="required" >
+              
+  			<h3>Credit score?(300-900)</h3><br><input id="Credit_score" name="Credit_score" required="required" value="e.g 300-900">
+            
+            <h3>Tenure?</h3><br><input id="tenure" name="tenure" required="required" value=" eg 1,2,3">
+            
+  	        
+	       <h3>No of product?</h3><br><input id="Noproduct" name="Noproduct" required="required" >
+
+           <h3>Has Credit card?</h3><br><select name="credit_card" id="credit_card" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                </select>
+                
+                 
+          <h3>Is Active Member?</h3><br><select name="IsActiveMember" id="ActM" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                </select>
+                 
+               
+             
+      
+            <br><br><button id="submission" type="submit ">Predict</button>
+            <br>
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}</h3>
+    </div>
+
+
+    
+	
+</body>
+
+</html>
